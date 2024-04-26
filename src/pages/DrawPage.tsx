@@ -7,7 +7,7 @@ import CanvasBox from "../components/CanvasBox";
 
 const DrawPage: React.FC = () => {
   const [toolBoxVisible, setToolBoxVisible] = useState<boolean>(false);
-  const [pencilSize, setPencilSize] = useState<string>("3");
+  const [pencilSize, setPencilSize] = useState<number>(3);
   const [pencilColor, setPencilColor] = useState<string>("black");
   const [eraserSize, setEraserSize] = useState<string>("3");
   const [stickyNotes, setStickyNotes] = useState<JSX.Element[]>([]);

@@ -62,36 +62,38 @@ const CanvasBox = ({ pencilSize, pencilColor }: CanvasBoxProps) => {
     setCurrentPath([]);
   };
 
-  const undoDrawing = () => {
-    if (drawingHistory.length > 0) {
-      const newContext = canvasRef.current?.getContext("2d");
-      if (!newContext) return; // Handle potential null context
+  // const undoDrawing = () => {
+  //   if (drawingHistory.length > 0) {
+  //     const newContext = canvasRef.current?.getContext("2d");
+  //     if (!newContext) return; // Handle potential null context
 
-      newContext.clearRect(
-        0,
-        0,
-        canvasRef.current.width,
-        canvasRef.current.height
-      ); // Clear entire canvas
-      setDrawingHistory(drawingHistory.slice(0, drawingHistory.length - 1)); // Remove last action
+  //     if (canvasRef.current) {
+  //       newContext.clearRect(
+  //         0,
+  //         0,
+  //         canvasRef.current.width,
+  //         canvasRef.current.height
+  //       ); // Clear entire canvas
+  //       setDrawingHistory(drawingHistory.slice(0, drawingHistory.length - 1)); // Remove last action
 
-      redrawPreviousData(newContext); // Redraw remaining history
-    }
-  };
+  //       redrawPreviousData(newContext); // Redraw remaining history
+  //     }
+  //   }
+  // };
 
-  const clearDrawing = () => {
-    setDrawingHistory([]);
-    setCurrentPath([]);
-    const newContext = canvasRef.current?.getContext("2d");
-    if (newContext) {
-      newContext.clearRect(
-        0,
-        0,
-        canvasRef.current.width,
-        canvasRef.current.height
-      );
-    }
-  };
+  // const clearDrawing = () => {
+  //   setDrawingHistory([]);
+  //   setCurrentPath([]);
+  //   const newContext = canvasRef.current?.getContext("2d");
+  //   if (newContext && canvasRef.current) {
+  //     newContext.clearRect(
+  //       0,
+  //       0,
+  //       canvasRef.current.width,
+  //       canvasRef.current.height
+  //     );
+  //   }
+  // };
 
   const redrawPreviousData = (ctx: CanvasRenderingContext2D) => {
     drawingHistory.forEach(({ path, style }) => {

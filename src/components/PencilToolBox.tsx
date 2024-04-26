@@ -1,7 +1,7 @@
 type PencilToolBoxProps = {
   pencilToolBoxVisible: boolean;
-  pencilSize: string;
-  setPencilSize: (e: string) => void;
+  pencilSize: number;
+  setPencilSize: (e: number) => void;
   pencilColor: string;
   setPencilColor: (e: string) => void;
 };
@@ -13,7 +13,7 @@ const PencilToolBox = ({
   setPencilColor,
 }: PencilToolBoxProps) => {
   const handlePencilSize = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPencilSize(e.target.value);
+    setPencilSize(Number.parseInt(e.target.value));
     console.log(pencilSize);
   };
   const handlePencilColor = (color: string) => {

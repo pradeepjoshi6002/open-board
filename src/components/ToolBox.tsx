@@ -13,8 +13,8 @@ import { useEffect, useState } from "react";
 
 type ToolBoxProps = {
   toolBoxVisible: boolean;
-  pencilSize: string;
-  setPencilSize: (e: string) => void;
+  pencilSize: number;
+  setPencilSize: (e: number) => void;
   pencilColor: string;
   setPencilColor: (e: string) => void;
   eraserSize: string;
